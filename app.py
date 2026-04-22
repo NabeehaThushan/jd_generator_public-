@@ -388,7 +388,7 @@ st.markdown("""
 # ─── Sidebar: API settings ─────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("### ⚙️ Settings")
-    api_key = st.text_input("OpenAI API Key", type="password", placeholder="sk-...")
+    api_key = st.secrets.get("OPENAI_API_KEY", "")
     model = st.selectbox(
         "Model",
         ["gpt-4o-mini", "gpt-4o"],
